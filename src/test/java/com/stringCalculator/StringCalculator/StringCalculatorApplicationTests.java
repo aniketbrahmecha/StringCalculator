@@ -41,4 +41,10 @@ class StringCalculatorApplicationTests {
 		Assertions.assertEquals(6,stringCalculatorApplication.add("1\n2,3"));
 	}
 
+	@Test
+	@DisplayName("Testing new delimiter")
+	void testNewDelimiter(){
+		Assertions.assertEquals(3,stringCalculatorApplication.add("//;\n1;2"));
+	}
+
 }
