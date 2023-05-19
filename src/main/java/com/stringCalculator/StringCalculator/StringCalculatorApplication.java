@@ -19,7 +19,7 @@ public class StringCalculatorApplication {
 
 		// String of length > 1
 		else{
-			String [] numbersArray = numbers.split(",");
+			String [] numbersArray = numbers.split("[,\n]");
 			return calculateSum(numbersArray);
 		}
 	}

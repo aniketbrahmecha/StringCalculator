@@ -35,4 +35,10 @@ class StringCalculatorApplicationTests {
 		Assertions.assertEquals(22,stringCalculatorApplication.add("5,8,9"));
 	}
 
+	@Test
+	@DisplayName("Testing New Line in String")
+	void testNewLine(){
+		Assertions.assertEquals(6,stringCalculatorApplication.add("1\n2,3"));
+	}
+
 }
