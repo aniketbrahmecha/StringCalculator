@@ -13,10 +13,6 @@ class StringCalculatorApplicationTests {
 	@Autowired StringCalculatorApplication stringCalculatorApplication;
 
 	@Test
-	void contextLoads() {
-	}
-
-	@Test
 	@DisplayName("Testing Empty String")
 	void testEmptyString(){
 		Assertions.assertEquals(0,stringCalculatorApplication.add(""));
@@ -40,6 +36,7 @@ class StringCalculatorApplicationTests {
 	@DisplayName("Testing New Line in String")
 	void testNewLine(){
 		Assertions.assertEquals(6,stringCalculatorApplication.add("1\n2,3"));
+		Assertions.assertEquals(7,stringCalculatorApplication.add("1\n2\n4"));
 	}
 
 	@Test
