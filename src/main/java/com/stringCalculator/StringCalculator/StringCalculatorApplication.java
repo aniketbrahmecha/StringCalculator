@@ -1,6 +1,5 @@
 package com.stringCalculator.StringCalculator;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -31,8 +30,19 @@ public class StringCalculatorApplication {
 
 	public int calculateSum(String[] numbersArray ){
 		int total = 0;
+		StringBuilder negativeNumber = new StringBuilder();
 		for(String currentNumber : numbersArray){
+			if(Integer.parseInt(currentNumber) < 0) {					// check wheter a number is negative
+				if (negativeNumber.toString().equals("")) {
+					negativeNumber = new StringBuilder(currentNumber);
+				} else {
+					negativeNumber.append(", ").append(currentNumber);
+				}
+			}
 			total += Integer.parseInt(currentNumber);
+		}
+		if(!negativeNumber.toString().equals("")){						// if negative throw error
+			throw new IllegalArgumentException("Negatives not allowed: " + negativeNumber);
 		}
 		return total;
 	}

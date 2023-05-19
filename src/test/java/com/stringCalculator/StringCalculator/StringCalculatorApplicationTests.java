@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
 class StringCalculatorApplicationTests {
 
@@ -45,6 +46,28 @@ class StringCalculatorApplicationTests {
 	@DisplayName("Testing new delimiter")
 	void testNewDelimiter(){
 		Assertions.assertEquals(3,stringCalculatorApplication.add("//;\n1;2"));
+	}
+
+	@Test
+	@DisplayName("Testing negative numbers in String")
+	void testSingleNegativeNumber(){
+		try{
+			stringCalculatorApplication.add("-1,2,3");
+		}
+		catch(IllegalArgumentException e){
+			Assertions.assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+	}
+
+	@Test
+	@DisplayName("Testing negative numbers in String")
+	void testMutipleNegativeNumbers(){
+		try{
+			stringCalculatorApplication.add("-1,2,-3");
+		}
+		catch(IllegalArgumentException e){
+			Assertions.assertEquals(e.getMessage(), "Negatives not allowed: -1, -3");
+		}
 	}
 
 }
