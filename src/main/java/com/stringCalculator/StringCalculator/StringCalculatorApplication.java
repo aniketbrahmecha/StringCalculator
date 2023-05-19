@@ -42,7 +42,7 @@ public class StringCalculatorApplication {
 			total += Integer.parseInt(currentNumber);
 		}
 		if(!negativeNumber.toString().equals("")){						// if negative throw error
-			throw new IllegalArgumentException("Negatives not allowed: " + negativeNumber);
+			throw new IllegalArgumentException("negatives not allowed: " + negativeNumber);
 		}
 		return total;
 	}

@@ -55,7 +55,7 @@ class StringCalculatorApplicationTests {
 			stringCalculatorApplication.add("-1,2,3");
 		}
 		catch(IllegalArgumentException e){
-			Assertions.assertEquals(e.getMessage(), "Negatives not allowed: -1");
+			Assertions.assertEquals(e.getMessage(), "negatives not allowed: -1");
 		}
 	}
 
@@ -66,7 +66,7 @@ class StringCalculatorApplicationTests {
 			stringCalculatorApplication.add("-1,2,-3");
 		}
 		catch(IllegalArgumentException e){
-			Assertions.assertEquals(e.getMessage(), "Negatives not allowed: -1, -3");
+			Assertions.assertEquals(e.getMessage(), "negatives not allowed: -1, -3");
 		}
 	}
 
