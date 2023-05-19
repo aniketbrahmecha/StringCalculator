@@ -49,7 +49,7 @@ class StringCalculatorApplicationTests {
 	}
 
 	@Test
-	@DisplayName("Testing negative numbers in String")
+	@DisplayName("Testing negative number in String")
 	void testSingleNegativeNumber(){
 		try{
 			stringCalculatorApplication.add("-1,2,3");
