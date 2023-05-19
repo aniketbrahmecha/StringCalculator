@@ -5,13 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class StringCalculatorApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(StringCalculatorApplication.class, args);
-		System.out.println("Hello");
-	}
-
-
 	public int add(String numbers){
 
 		// Empty String Check
@@ -26,8 +19,17 @@ public class StringCalculatorApplication {
 
 		// String of length > 1
 		else{
-			return 0;
+			String [] numbersArray = numbers.split(",");
+			return calculateSum(numbersArray);
 		}
+	}
+
+	public int calculateSum(String[] numbersArray ){
+		int total = 0;
+		for(String currentNumber : numbersArray){
+			total += Integer.parseInt(currentNumber);
+		}
+		return total;
 	}
 
 
